@@ -1,0 +1,94 @@
+openapi: 3.0.3
+info:
+  title: Onboarding API
+  version: 1.0.0
+externalDocs:
+  url: https://github.com/Rjonathan03t/API-EXERCISE
+  description: GITHUB - STD22105
+servers:
+  - url: https://revision.com
+tags:
+  - name: book
+paths:
+  /book:
+    get:
+      tags:
+        - book
+      description: Get book by id_book
+      parameters:
+        - name: book
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/book"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/book"
+    put:
+      tags:
+        - book
+      summary: Update book
+      description: Updates a book
+      parameters:
+        - name: book
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/book"
+      responses:
+        "200":
+          description: Update successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/book"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/book"
+    delete:
+      tags:
+        - book
+      summary: delete book
+      description: delete a book
+      parameters:
+        - name: book
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: delete successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/book"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/book"
+components:
+  schemas:
+    book:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        bookName:
+          type: string
+        releaseDate:
+          type: string
+          format: date
