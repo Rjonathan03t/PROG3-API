@@ -34,8 +34,7 @@ paths:
     put:
       tags:
         - book
-      summary: Update book
-      description: Updates a book
+      description: Update a book
       parameters:
         - name: book
           in: path
@@ -61,7 +60,6 @@ paths:
     delete:
       tags:
         - book
-      summary: delete book
       description: delete a book
       parameters:
         - name: book
